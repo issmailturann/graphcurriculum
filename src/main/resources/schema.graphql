@@ -1,0 +1,26 @@
+type Student {
+    id: ID!
+    name: String!
+    surname: String!
+    grade: String!
+    email: String!
+    phoneNumber: String!
+    city: String!
+    country: String!
+    curriculums: [Curriculum!]
+}
+
+type Curriculum {
+    id: ID!
+    name: String!
+    type: String!
+    duration: Int!
+    examType: String!
+    student: Student!
+}
+
+type Query {
+    students: [Student!]
+    student(id: ID!): Student
+    curriculums: [Curriculum!]
+}
